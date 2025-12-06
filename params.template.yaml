@@ -1,0 +1,49 @@
+# === VIC-Res Ingest — cấu hình dự án ===
+project:
+  root: "."   # thư mục gốc repo
+
+basin:
+  vector_zip: "ref/Da_River_Basin.zip"   # luu vuc song Da
+  vector_gpkg: "ref/Da_River_Basin.gpkg" # xuat ra tu QGIS
+
+dem:
+  tif: "ref/DEM_DaRiver_WGS84.tif"       # DEM ~548 MB
+
+grid:
+  res_deg: 0.05          # độ phân giải ô VIC theo độ
+  min_fraction: 0.01      # ngưỡng diện tích giao với lưu vực
+  prefix: "DaRiver"
+  csv: "outputs/grids/vic_grid_0p05_DaRiver.csv"
+  template_nc: "outputs/grids/vic_grid_0p05_DaRiver_template.nc"
+
+forcing:
+  precip:
+    source: "CHIRPS"         # hoặc "IMERG"
+    t0: "2024-01-01"
+    t1: "2024-12-31"
+    method: "linear"
+    res: "p05"              # dùng cho CHIRPS
+    download: "auto"        # auto|true|false
+    cleanup_raw: true       # xong là xoá raw
+    write_netcdf: false     # chỉ xuất ASCII cho VIC-Res
+    
+  temperature:
+    dataset: "ERA5-Land" # hoặc "ERA5"
+    years: [2024]
+    months: [1,2,3,4,5,6,7,8,9,10,11,12]
+    tz: 7
+    backend: "auto"
+    export_ascii: true
+    show_plots: true 
+
+  wind:
+    dataset: "ERA5-Land"     # hoặc "ERA5"
+    years: [2020]            # năm bạn muốn
+    months: [1]  # hoặc 1..12 hay 1..3 tùy bạn
+    tz: 7
+    backend: "cds"          # "auto" | "cds" | "ecmwf" | "local"
+    export_ascii: true
+    show_plots: true
+    # 2 dòng dưới là optional, chỉ có tác dụng nếu wind_utils hỗ trợ
+    force_redownload: false
+    clean_raw: false

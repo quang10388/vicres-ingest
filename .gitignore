@@ -1,0 +1,33 @@
+# ===== DỮ LIỆU & KẾT QUẢ KHÔNG ĐƯA LÊN GITHUB =====
+data/
+outputs/
+env/
+inputs/
+ref/
+
+# ===== FILE CẤU HÌNH RIÊNG TỪNG MÁY =====
+params.yaml
+*.local.yaml
+
+# ===== CONDA / VIRTUAL ENV =====
+.venv/
+venv/
+envs/*
+!envs/environment.yml   # vẫn giữ environment.yml để người khác tái tạo env
+
+# ===== NOTEBOOK CACHE =====
+**/.ipynb_checkpoints/
+# Bỏ qua notebook Jupyter (chỉ giữ .gitkeep)
+notebooks/*.ipynb
+
+# ===== PYTHON CACHE / BIÊN DỊCH =====
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ===== IDE / HỆ ĐIỀU HÀNH =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
