@@ -1,0 +1,40 @@
+name: vicres-dariver
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - jupyterlab
+  - ipykernel
+  - xarray
+  - dask
+  - zarr
+  - netCDF4
+  - h5netcdf
+  - numpy
+  - pandas
+  - bottleneck
+  - numexpr
+  - scipy
+  - geopandas
+  - shapely
+  - rioxarray
+  - rasterio
+  - pyproj
+  - rtree
+  - cartopy
+  - matplotlib
+  - tqdm
+  - requests
+  - s3fs
+  - gdal
+  - proj
+  - proj-data         # đủ thay cho proj-datumgrid trên Windows
+  - pyogrio
+  - regionmask
+  - eccodes
+  - cfgrib
+  - pip
+  - cdsapi
+  - pip:
+      - typer[all]
+      - rio-cogeo>=5

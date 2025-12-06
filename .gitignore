@@ -12,8 +12,10 @@ params.yaml
 # ===== CONDA / VIRTUAL ENV =====
 .venv/
 venv/
+env/
 envs/*
-!envs/environment.yml   # vẫn giữ environment.yml để người khác tái tạo env
+!envs/environment.yml
+
 
 # ===== NOTEBOOK CACHE =====
 **/.ipynb_checkpoints/
