@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vicres-ingest"
+version = "0.1.0"
+description = "Công cụ thu nhận & xử lý dữ liệu (DEM, mưa, nhiệt độ, gió) cho mô hình VIC-Res"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pandas",
+  "xarray",
+  "netcdf4",
+  "h5netcdf",
+  "rioxarray",
+  "geopandas",
+  "shapely",
+  "pyproj",
+  "matplotlib",
+  "requests",
+  "cdsapi",
+  "pyyaml",
+  "scipy",
+]
+
+[project.scripts]
+vicres-ingest = "vicres_tool.preprocess:_cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
