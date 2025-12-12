@@ -1,4 +1,4 @@
-name: vicres-dariver
+name: vicres-ingest
 channels:
   - conda-forge
 dependencies:
